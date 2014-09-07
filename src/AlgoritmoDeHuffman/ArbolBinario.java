@@ -92,7 +92,7 @@ public class ArbolBinario {
         return Contar(_raiz);
     }
     
-    public int Contar(NodoBinario n){
+    private int Contar(NodoBinario n){
         if(n != null){
             int c1 = Contar(n.getHijoIzq());
             int c2 = Contar(n.getHijoDer());
@@ -100,6 +100,38 @@ public class ArbolBinario {
         } 
         return 0;
     }
+    
+    public int Altura(){
+        return Altura(_raiz);
+    }
+    
+    private int Altura(NodoBinario n){
+        if (n != null){
+            int h1 = Altura(n.getHijoIzq());
+            int h2 = Altura(n.getHijoDer());
+            if (h1>h2) return h1+1;
+            return h2+1;
+        }
+        return 0;
+    }
+    
+    /*
+    public String MayorNodo(){
+        return MayorNodo(_raiz);
+    }
+    
+    private String MayorNodo(NodoBinario n){
+        if (n != null){
+            String m1 = MayorNodo(n.getHijoIzq());
+            String m2 = MayorNodo(n.getHijoDer());
+            String m3 = n.getDato();
+            
+            //if (m1 >= m2 && m1 >= m3) return m1;
+            //if (m2 >= m1 && m2 >= m3) return m2;
+            //return m3;
+        }
+        return "0";
+    }*/
 
 
     /**
