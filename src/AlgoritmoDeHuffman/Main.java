@@ -27,7 +27,7 @@ public class Main {
         
         Scanner in  = new Scanner(System.in);
         TreeSet _CaracIng = new TreeSet(new OrdenarPorOcurrencia() );
-        OrdenamientoHuffman _orden = new OrdenamientoHuffman();
+
         
         System.out.println("Ingrese la cadena a codificar");
         String mensaje = in.nextLine();
