@@ -15,23 +15,22 @@ package AlgoritmoDeHuffman;
  * @author Kevin
  */
 public class NodoBinario {
-    private String _dato;
-    private NodoBinario _hijoIzq;
-    private NodoBinario _hijoDer;
+    protected String _dato;
+    protected NodoBinario _hijoIzq;
+    protected NodoBinario _hijoDer;
     
-    public NodoBinario(String dato, NodoBinario hijoIzq, NodoBinario hijoDer){
+    /*NodoBinario(String dato, NodoBinario hijoIzq, NodoBinario hijoDer){
         _dato = dato;
         _hijoIzq = hijoIzq;
         _hijoDer = hijoDer;
         
     }
     
-    public NodoBinario(String dato){
+    NodoBinario(String dato){
         _dato = dato;
         _hijoIzq = null;
         _hijoDer = null;
-        
-    }
+    }*/
 
     /**
      * @return the _dato

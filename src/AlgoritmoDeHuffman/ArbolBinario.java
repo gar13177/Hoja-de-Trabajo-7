@@ -16,10 +16,12 @@ package AlgoritmoDeHuffman;
  */
 public class ArbolBinario {
     
-    private NodoBinario _raiz;
+    protected NodoBinario _raiz;
+    
+    /*
     public ArbolBinario(){
         _raiz = null;
-    }
+    }*/
     
     //metodo publico
     public String Preorden(){
@@ -114,24 +116,6 @@ public class ArbolBinario {
         }
         return 0;
     }
-    
-    /*
-    public String MayorNodo(){
-        return MayorNodo(_raiz);
-    }
-    
-    private String MayorNodo(NodoBinario n){
-        if (n != null){
-            String m1 = MayorNodo(n.getHijoIzq());
-            String m2 = MayorNodo(n.getHijoDer());
-            String m3 = n.getDato();
-            
-            //if (m1 >= m2 && m1 >= m3) return m1;
-            //if (m2 >= m1 && m2 >= m3) return m2;
-            //return m3;
-        }
-        return "0";
-    }*/
 
 
     /**
