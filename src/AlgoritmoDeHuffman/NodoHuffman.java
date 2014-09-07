@@ -16,15 +16,17 @@ package AlgoritmoDeHuffman;
  */
 public class NodoHuffman extends NodoBinario{
     
-    private int _ocurrencia;    
+    private int _ocurrencia; 
+    private String _codigo;
     
     NodoHuffman(String dato,int ocurrencia){
         _dato = dato;
         _ocurrencia = ocurrencia;
         _hijoIzq = null;
         _hijoDer = null;
+        _codigo = "";
     }
-
+    
     /**
      * @return the _ocurrencia
      */
@@ -39,6 +41,23 @@ public class NodoHuffman extends NodoBinario{
         this._ocurrencia = _ocurrencia;
     }
     
+    public String toString(){
+        return this.getDato()+" "+this.getOcurrencia();
+    }
+
+    /**
+     * @return the _codigo
+     */
+    public String getCodigo() {
+        return _codigo;
+    }
+
+    /**
+     * @param _codigo the _codigo to set
+     */
+    public void setCodigo(String _codigo) {
+        this._codigo = _codigo;
+    }
     
     
     
