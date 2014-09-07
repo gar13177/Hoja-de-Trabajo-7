@@ -30,7 +30,7 @@ public class ArbolBinario {
     private String Preorden(NodoBinario n){
         if (n != null){
             String s = "";
-            s += " "+n.getDato();
+            s += n.getDato()+" ";
             s += Preorden(n.getHijoIzq());
             s += Preorden(n.getHijoDer());
             return s;
@@ -49,7 +49,7 @@ public class ArbolBinario {
             String s = "";
             s += Postorden(n.getHijoIzq());
             s += Postorden(n.getHijoDer());
-            s += " "+n.getDato();           
+            s += n.getDato()+" ";           
             return s;
         }
         return "";
@@ -65,11 +65,40 @@ public class ArbolBinario {
         if (n != null){
             String s = "";
             s += Inorden(n.getHijoIzq());
-            s += " "+n.getDato(); 
+            s += n.getDato()+" "; 
             s += Inorden(n.getHijoDer()); 
             return s;
         }
         return "";
+    }
+    
+    public String Buscar(String numero){
+        if (Buscar(_raiz, numero))
+            return "Encontrado";
+        return "No encontrado";
+    }
+    
+    private boolean Buscar(NodoBinario n, String numero){
+        if (n != null){
+            if (n.getDato().equals(numero)) return true;
+            boolean ok1 = Buscar(n.getHijoIzq(), numero);
+            boolean ok2 = Buscar(n.getHijoDer(), numero);
+            if (ok1||ok2) return true;
+        }
+        return false;
+    }
+    
+    public int Contar(){
+        return Contar(_raiz);
+    }
+    
+    public int Contar(NodoBinario n){
+        if(n != null){
+            int c1 = Contar(n.getHijoIzq());
+            int c2 = Contar(n.getHijoDer());
+            return c1+c2+1;
+        } 
+        return 0;
     }
 
 
