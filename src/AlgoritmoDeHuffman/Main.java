@@ -36,7 +36,7 @@ public class Main {
             _CaracIng.add(new NodoHuffman(""+mensaje.charAt(mensaje.length()-1),mensaje.length() - mensaje.replace(""+mensaje.charAt(mensaje.length()-1), "").length()));
             mensaje = mensaje.replace(""+mensaje.charAt(mensaje.length()-1), "");
         }
-        System.out.println(_CaracIng);  
+        System.out.println("Jerarquizacion iniciada: "+_CaracIng);  
         
         
         while (_CaracIng.size() != 1){
@@ -55,12 +55,22 @@ public class Main {
             tmp3.setHijoDer(tmp2);
             
             _CaracIng.add(tmp3);
-            System.out.println(_CaracIng); 
+             
           
         }
+        System.out.println("Jerarquizacion terminada: "+_CaracIng);
         
         ArbolHuffman _newArbol = new ArbolHuffman((NodoHuffman)_CaracIng.first());
-        //System.out.println(_newArbol.Preorden());
+        String raiz = ((NodoHuffman)_newArbol.getRaiz()).getDato();
+        String[] codigos = new String[raiz.length()];
+        for (int i=0; i<raiz.length();i++){
+            codigos[i] = _newArbol.Buscar(""+raiz.charAt(i));
+            System.out.println(raiz.charAt(i)+" "+codigos[i]);
+        }
+        
+        
+        
+        
 
     }
     

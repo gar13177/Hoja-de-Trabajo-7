@@ -1,0 +1,13 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Universidad del Valle de Guatemala
+${licensePrefix}Algoritmos y Estructuras de Datos 2014
+${licensePrefix}Hoja de Trabajo No. 7
+${licensePrefix}Algoritmo de Huffman
+${licensePrefix}
+${licensePrefix}Vidal Villegas Zabala 13023
+${licensePrefix}Kevin Estuardo Garcia 13177
+<#if licenseLast??>
+${licenseLast}
+</#if>

@@ -27,10 +27,13 @@ public class ArbolHuffman extends ArbolBinario {
     
     private String Buscar(NodoHuffman n, String dato){
         if (n != null){
-            if (n.getDato().equals(dato)) return n.getCodigo();
-            String ok1 = Buscar((NodoHuffman)n.getHijoIzq(), dato);
-            String ok2 = Buscar((NodoHuffman)n.getHijoDer(), dato);
-            return ok1+ok2;
+            if (n.getDato().contains(dato)){
+                String ok =  n.getCodigo();
+                String ok1 = Buscar((NodoHuffman)n.getHijoIzq(), dato);
+                String ok2 = Buscar((NodoHuffman)n.getHijoDer(), dato);
+                return ok+ok1+ok2;
+            }
+            return "";
         }
         return "";
     }
