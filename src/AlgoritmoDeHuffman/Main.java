@@ -27,7 +27,7 @@ public class Main {
         
         Scanner in  = new Scanner(System.in);
         TreeSet _CaracIng = new TreeSet(new OrdenarPorOcurrencia() );
-        Decoder _newDecode = new Decoder();
+        
 
         
         System.out.println("Ingrese la cadena a codificar");

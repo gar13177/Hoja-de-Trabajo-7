@@ -10,7 +10,6 @@
 
 package AlgoritmoDeHuffman;
 
-import hoja7.analisis;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,9 +21,9 @@ import static org.junit.Assert.*;
  *
  * @author Kevin
  */
-public class analisisTest {
+public class OrdenarPorOcurrenciaTest {
     
-    public analisisTest() {
+    public OrdenarPorOcurrenciaTest() {
     }
     
     @BeforeClass
@@ -44,20 +43,19 @@ public class analisisTest {
     }
 
     /**
-     * Test of Revision method, of class analisis.
+     * Test of compare method, of class OrdenarPorOcurrencia.
      */
     @Test
-    public void testRevision() {
-        System.out.println("Revision");
-        String[] letras = {"a","b","c"};
-        String[] equivalencia = {"10","11","0"};
-        String linea = "101010";
-        analisis instance = new analisis();
-        String expResult = "aaa";
-        String result = instance.Revision(letras, equivalencia, linea);
+    public void testCompare() {
+        System.out.println("compare");
+        Object n1 = null;
+        Object n2 = null;
+        OrdenarPorOcurrencia instance = new OrdenarPorOcurrencia();
+        int expResult = 0;
+        int result = instance.compare(n1, n2);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        fail("The test case is a prototype.");
     }
     
 }
