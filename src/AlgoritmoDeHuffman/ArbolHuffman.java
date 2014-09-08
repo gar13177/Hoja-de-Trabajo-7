@@ -38,5 +38,44 @@ public class ArbolHuffman extends ArbolBinario {
         return "";
     }
     
+    public String Decode(String dato){
+        return Decode((NodoHuffman)_raiz, dato);
+    }
+    
+    private String Decode(NodoHuffman n, String d){
+        if ((""+d.charAt(0)).equals("0")){
+            if(n.getHijoIzq()!=null){
+                if (d.length()!=1){
+                    return Decode((NodoHuffman)n.getHijoIzq(),d.substring(1));
+                }else{
+                    if ((n.getHijoIzq()).getHijoIzq()==null) return (n.getHijoIzq()).getDato();
+                    return null;
+                }
+            }else{
+                if (d.length()!=1){
+                    return n.getDato()+Decode((NodoHuffman)_raiz,d.substring(0));
+                }else{
+                    return n.getDato();
+                }
+            }
+        }else if((""+d.charAt(0)).equals("1")){
+            if(n.getHijoDer()!=null){
+                if (d.length()!=1){
+                    return Decode((NodoHuffman)n.getHijoDer(),d.substring(1));
+                }else{
+                    if ((n.getHijoDer()).getHijoDer()==null) return (n.getHijoIzq()).getDato();
+                    return null;
+                }
+            }else{
+                if (d.length()!=1){
+                    return n.getDato()+Decode((NodoHuffman)_raiz,d.substring(0));
+                }else{
+                    return n.getDato();
+                }
+            }
+        }
+        return null;
+    }
+    
     
 }
