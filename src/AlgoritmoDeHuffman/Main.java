@@ -27,10 +27,11 @@ public class Main {
         
         Scanner in  = new Scanner(System.in);
         TreeSet _CaracIng = new TreeSet(new OrdenarPorOcurrencia() );
+        Decoder _newDecode = new Decoder();
 
         
         System.out.println("Ingrese la cadena a codificar");
-        String mensaje = in.nextLine();
+        String mensaje = in.nextLine().toUpperCase();
         
         while (mensaje.length() != 0){
             _CaracIng.add(new NodoHuffman(""+mensaje.charAt(mensaje.length()-1),mensaje.length() - mensaje.replace(""+mensaje.charAt(mensaje.length()-1), "").length()));
@@ -67,6 +68,15 @@ public class Main {
             codigos[i] = _newArbol.Buscar(""+raiz.charAt(i));
             System.out.println(raiz.charAt(i)+" "+codigos[i]);
         }
+        
+        System.out.println("Ingrese cadena a decodificar");
+        String cadena = in.nextLine();
+        String cadena1 = _newArbol.Decode(cadena);
+        if (cadena1.contains("error")){
+            System.out.println("Cadena erronea");
+        }else System.out.println(cadena1);
+        
+        
         
         
         

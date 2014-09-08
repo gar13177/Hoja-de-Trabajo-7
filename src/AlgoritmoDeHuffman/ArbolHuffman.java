@@ -49,13 +49,13 @@ public class ArbolHuffman extends ArbolBinario {
                     return Decode((NodoHuffman)n.getHijoIzq(),d.substring(1));
                 }else{
                     if ((n.getHijoIzq()).getHijoIzq()==null) return (n.getHijoIzq()).getDato();
-                    return null;
+                    return "error";
                 }
             }else{
                 if (d.length()!=1){
                     return n.getDato()+Decode((NodoHuffman)_raiz,d.substring(0));
                 }else{
-                    return n.getDato();
+                    return "error";//n.getDato();
                 }
             }
         }else if((""+d.charAt(0)).equals("1")){
@@ -63,18 +63,18 @@ public class ArbolHuffman extends ArbolBinario {
                 if (d.length()!=1){
                     return Decode((NodoHuffman)n.getHijoDer(),d.substring(1));
                 }else{
-                    if ((n.getHijoDer()).getHijoDer()==null) return (n.getHijoIzq()).getDato();
-                    return null;
+                    if ((n.getHijoDer()).getHijoDer()==null) return (n.getHijoDer()).getDato();
+                    return "error";
                 }
             }else{
                 if (d.length()!=1){
                     return n.getDato()+Decode((NodoHuffman)_raiz,d.substring(0));
                 }else{
-                    return n.getDato();
+                    return "error";//n.getDato();
                 }
             }
         }
-        return null;
+        return "error";
     }
     
     
